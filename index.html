@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandana Girl - Let's Build Something Together</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+        }
+
+        .header-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Bandana pattern overlay */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(220, 20, 60, 0.03) 10px,
+                    rgba(220, 20, 60, 0.03) 20px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(30, 144, 255, 0.03) 10px,
+                    rgba(30, 144, 255, 0.03) 20px
+                );
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 100px;
+            padding: 20px;
+        }
+
+        .hero-section {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tweet-container {
+            width: 100%;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .bandana-icon {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .pitch {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pitch-line {
+            margin-bottom: 15px;
+        }
+
+        .pitch-line:last-child {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            color: #4ecdc4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            margin-bottom: 60px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+
+        footer a {
+            color: #4ecdc4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            .header-title {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                margin-top: 80px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .pitch {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+
+            .pitch-line:last-child {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            .bandana-icon {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 15px;
+            }
+
+            .header-title {
+                font-size: 1.1rem;
+            }
+
+            .container {
+                margin-top: 70px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .pitch {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <div class="header-title">Bandana Girl</div>
+    </header>
+
+    <div class="container">
+        <div class="hero-section">
+            <div class="tweet-container">
+                <blockquote class="twitter-tweet" data-theme="dark">
+                    <p lang="en" dir="ltr">
+                        <a href="https://x.com/w0rdgenerator/status/1984987985696408026"></a>
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+        
+        <div class="pitch">
+            <div class="pitch-line">Hi Bandana Girl, do you wanna get rich?</div>
+            <div class="pitch-line">Let's connect and build something together.</div>
+        </div>
+
+        <a href="https://x.com/pranavmandhare" class="cta-button" target="_blank" rel="noopener noreferrer">
+            DM on X
+        </a>
+    </div>
+
+    <footer>
+        © 2025 <a href="https://pranavmandhare.com" target="_blank" rel="noopener noreferrer">Pranav Mandhare</a>
+    </footer>
+</body>
+</html>
+
