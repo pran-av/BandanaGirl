@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bandana Girl - Let's Build Something Together</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧣</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -42,7 +45,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 40%;
             width: 100%;
             margin: 0 auto;
             position: relative;
@@ -51,8 +54,41 @@
             padding: 20px;
         }
 
-        .hero-section {
+        .content-section {
             margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 40px 0 20px 0;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        h3.bold {
+            font-weight: 700;
+        }
+
+        .hero-section {
+            margin: 40px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,29 +97,76 @@
 
         .tweet-container {
             width: 100%;
-            max-width: 550px;
             margin: 0 auto;
         }
 
-        .pitch {
-            font-size: 1.5rem;
-            line-height: 1.8;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: #ffffff;
-            color: #000000;
-            border-radius: 15px;
-            border: 1px solid #000000;
+        .ideas-section {
+            margin: 30px 0;
+        }
+
+        .ideas-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .ideas-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .ideas-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .ideas-scroll::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 4px;
+        }
+
+        .idea-card {
+            min-width: 300px;
+            max-width: 350px;
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+        }
+
+        .idea-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .idea-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .idea-card li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .idea-card li:before {
+            content: "• ";
+            font-weight: bold;
+        }
+
+        .cta-section {
             text-align: center;
+            margin-top: 40px;
         }
 
-        .pitch-line {
-            margin-bottom: 15px;
-        }
-
-        .pitch-line:last-child {
-            margin-bottom: 0;
-            font-size: 1.2rem;
+        .cta-section h1 {
+            margin-bottom: 30px;
         }
 
         .cta-button {
@@ -131,16 +214,10 @@
             opacity: 0.7;
         }
 
-        /* Desktop - center aligned hero */
+        /* Desktop - 40% width centered */
         @media (min-width: 769px) {
             .container {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-section {
-                width: 100%;
+                max-width: 40%;
             }
         }
 
@@ -155,17 +232,26 @@
             }
 
             .container {
+                max-width: 100%;
                 margin-top: 80px;
                 padding: 15px;
             }
 
-            .pitch {
-                font-size: 1.2rem;
-                padding: 20px;
+            h1 {
+                font-size: 2rem;
             }
 
-            .pitch-line:last-child {
-                font-size: 1rem;
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .idea-card {
+                min-width: 280px;
+                max-width: 300px;
             }
 
             .cta-button {
@@ -188,13 +274,35 @@
             }
 
             .container {
+                max-width: 100%;
                 margin-top: 70px;
                 padding: 10px;
             }
 
-            .pitch {
-                font-size: 1.1rem;
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .idea-card {
+                min-width: 250px;
+                max-width: 280px;
                 padding: 15px;
+            }
+
+            .idea-card h3 {
+                font-size: 1rem;
+            }
+
+            .idea-card li {
+                font-size: 0.85rem;
             }
 
             .tweet-container {
@@ -210,20 +318,77 @@
     </header>
 
     <div class="container">
+        <div class="content-section">
+            <h1>Hello Bandana Girl,</h1>
+            
+            <h3>I purchased this domain -- Bandana Girl dot IN -- to pitch you.</h3>
+            
+            <h3>You might have missed a lot of revenues for not having that blue check. But X is no all about the checkmark -- its about meeting people and building something useful too!</h3>
+        </div>
+
         <div class="hero-section">
             <div class="tweet-container">
                 <blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center"><p lang="en" dir="ltr">Makeup ate today <a href="https://t.co/NZ5UFAXxf8">pic.twitter.com/NZ5UFAXxf8</a></p>&mdash; bud wiser (@w0rdgenerator) <a href="https://twitter.com/w0rdgenerator/status/1984987985696408026?ref_src=twsrc%5Etfw">November 2, 2025</a></blockquote>
             </div>
         </div>
-        
-        <div class="pitch">
-            <div class="pitch-line">Hi Bandana Girl, do you wanna get rich?</div>
-            <div class="pitch-line">Let's connect and build something together.</div>
+
+        <div class="content-section">
+            <h3>So if you are tired of people calling your virality not having meaning, let's give it a meaning by productising it?</h3>
+            
+            <h3 class="bold">Here's some ideas as per AI to convert this momentum into something:</h3>
         </div>
 
-        <a href="https://x.com/pranavmandhare" class="cta-button" target="_blank" rel="noopener noreferrer">
-            DM on X
-        </a>
+        <div class="ideas-section">
+            <div class="ideas-scroll">
+                <div class="idea-card">
+                    <h3>1. Co-Branded Merch Drop</h3>
+                    <ul>
+                        <li>Limited run tees, bandanas, pins, art prints with w0rdgenerator credit.</li>
+                        <li>You handle site/fulfillment; partner promotes to their followers.</li>
+                        <li>Revenue split: 60/40 (you 60) until cost recouped, then 50/50.</li>
+                    </ul>
+                </div>
+                <div class="idea-card">
+                    <h3>2. "Bandana Girl" Micro-Series (short video/text)</h3>
+                    <ul>
+                        <li>8 short episodes (30–60s) expanding the character/story in the tweet.</li>
+                        <li>Partner co-creates, posts on X/IG/TikTok; you host exclusive extended episodes on the site (email gated).</li>
+                        <li>Monetize via sponsorships + merch funnel.</li>
+                    </ul>
+                </div>
+                <div class="idea-card">
+                    <h3>3. Limited NFT / Digital Collectible Drop (low-barrier)</h3>
+                    <ul>
+                        <li>200 collectible bandana art pieces, each unlocks merch discount + access to AMAs.</li>
+                        <li>Offer simple buy-with-card; keep on-chain optional.</li>
+                    </ul>
+                </div>
+                <div class="idea-card">
+                    <h3>4. Licensing / IP Partnership</h3>
+                    <ul>
+                        <li>Offer exclusive use of "Bandana Girl" branding for a time-boxed campaign (e.g., 6 months).</li>
+                        <li>Simpler for influencers who want low ops friction.</li>
+                    </ul>
+                </div>
+                <div class="idea-card">
+                    <h3>5. Live Pop-Up / IRL Collab</h3>
+                    <ul>
+                        <li>One day pop-up or live stream drop tied to a city or virtual event — good PR and FOMO.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>I believe we can come up with much better ideas than AI if we connect.</h2>
+        </div>
+
+        <div class="cta-section">
+            <h1>Do you want to be rich? Then let's TALK</h1>
+            <a href="https://x.com/pranavmandhare" class="cta-button" target="_blank" rel="noopener noreferrer">
+                DM on X
+            </a>
+        </div>
     </div>
 
     <footer>
