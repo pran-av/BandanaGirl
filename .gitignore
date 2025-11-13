@@ -5,6 +5,16 @@ node_modules/
 *.log
 npm-debug.log*
 
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+secrets.json
+config.json
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -15,4 +25,10 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
 
